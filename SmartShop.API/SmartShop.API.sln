@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.29411.108
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartShop.API", "SmartShop.API\SmartShop.API.csproj", "{EFE66499-4E10-4E98-BB5E-756C6EE1C588}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{2B18B21C-F38F-46B9-87F6-16F6B20FE363}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
