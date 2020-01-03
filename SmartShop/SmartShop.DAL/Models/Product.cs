@@ -15,6 +15,12 @@ namespace SmartShop.DAL.Models
 
         public decimal Price { get; set; }
 
+        public float Quantity { get; set; }
+
+        public bool IsCounted { get; set; }
+
         public bool? IsFeatured { get; set; }
+
+        public Category Category { get; set; }
     }
 }

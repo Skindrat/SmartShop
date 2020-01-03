@@ -31,7 +31,8 @@ namespace SmartShop.DAL.Abstraction.Repository
 
         public virtual async Task<List<T>> GetAll()
         {
-            return _ctx.Set<T>().ToList();
+            var res = _ctx.Set<T>().ToList();
+            return await Task.FromResult(res);
         }
 
         public virtual async Task<List<T>> GetAll(params Expression<Func<T, object>>[] includes)
