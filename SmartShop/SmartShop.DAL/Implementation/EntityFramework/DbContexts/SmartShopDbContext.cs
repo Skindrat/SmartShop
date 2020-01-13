@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Design;
 using SmartShop.DAL.Models;
 
 namespace SmartShop.DAL.Implementation.EntityFramework.DbContexts
@@ -10,7 +11,6 @@ namespace SmartShop.DAL.Implementation.EntityFramework.DbContexts
         public SmartShopDbContext(DbContextOptions<SmartShopDbContext> options) 
             : base(options)
         {
-            Database.EnsureCreated();
         }
     }
 }

@@ -15,9 +15,44 @@ namespace SmartShop.BLL.Services.Implementations
             _unitOfWork = unitOfWork;
         }
 
+        public async Task AddProducts(Product product)
+        {
+            await _unitOfWork.ProductRepository.Add(product);
+        }
+
         public async Task<IEnumerable<Product>> GetAllProducts()
         {
-            return await _unitOfWork.ProductRepository.GetAll();
+            //return await _unitOfWork.ProductRepository.GetAll();
+            return await Task.FromResult(new List<Product>()
+            {
+                new Product()
+                {
+                    Name = "Product1 Name",
+                    Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    IsCounted = false,
+                    IsFeatured = false,
+                    Price = 200.50m,
+                    Quantity = 100
+                },
+                  new Product()
+                {
+                    Name = "Product2 Name",
+                    Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    IsCounted = false,
+                    IsFeatured = false,
+                    Price = 250m,
+                    Quantity = 200
+                },
+                    new Product()
+                {
+                    Name = "Product3 Name",
+                    Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    IsCounted = true,
+                    IsFeatured = false,
+                    Price = 1200m,
+                    Quantity = 500
+                }
+            });
         }
     }
 }

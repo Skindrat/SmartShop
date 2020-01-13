@@ -7,5 +7,6 @@ namespace SmartShop.BLL.Services.Abstractions
     public interface IProductsService
     {
         Task<IEnumerable<Product>> GetAllProducts();
-    }
+		Task AddProducts(Product products);
+	}
 }
