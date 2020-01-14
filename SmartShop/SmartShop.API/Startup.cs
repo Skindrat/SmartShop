@@ -1,3 +1,4 @@
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -26,6 +27,7 @@ namespace SmartShop.API
 
             services.AddDbContext<DbContext, SmartShopDbContext>(opt => opt.UseSqlServer(dbConnection));
             services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddAutoMapper(typeof(Startup));
 
             services.AddScoped<IProductsService, ProductsService>();
             services.AddControllers();

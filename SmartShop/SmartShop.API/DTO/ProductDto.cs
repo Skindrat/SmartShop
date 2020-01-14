@@ -1,17 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace SmartShop.DAL.Models
+﻿namespace SmartShop.API.DTO
 {
-    public class Product
+    public class ProductDto
     {
-        [Key]
-        public int Id { get; set; }
-
-        [Required]
-        [MaxLength(50)]
         public string Name { get; set; }
 
-        [MaxLength(255)]
         public string Description { get; set; }
 
         public string ImageUrl { get; set; }
@@ -24,6 +16,5 @@ namespace SmartShop.DAL.Models
 
         public bool? IsFeatured { get; set; }
 
-        public Category Category { get; set; }
     }
 }

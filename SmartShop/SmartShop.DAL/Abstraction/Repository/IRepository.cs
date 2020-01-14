@@ -9,6 +9,8 @@ namespace SmartShop.DAL.Abstraction.Repository
     {
         Task<bool> Add(T entity);
 
+        Task<bool> AddRange(IEnumerable<T> entities);
+
         Task<List<T>> GetAll();
 
         Task<List<T>> GetAll(params Expression<Func<T, object>>[] includes);

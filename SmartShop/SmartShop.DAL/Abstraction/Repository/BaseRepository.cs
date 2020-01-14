@@ -20,8 +20,21 @@ namespace SmartShop.DAL.Abstraction.Repository
         {
             try
             {
-                _ctx.Set<T>().Add(entity);
-                return await Task.FromResult(true);
+                await _ctx.Set<T>().AddAsync(entity);
+                return true;
+            }
+            catch (Exception)
+            {
+                return await Task.FromResult(false);
+            }
+        }
+
+        public async Task<bool> AddRange(IEnumerable<T> entities)
+        {
+            try
+            {
+                await _ctx.Set<T>().AddRangeAsync(entities);
+                return true;
             }
             catch (Exception)
             {
