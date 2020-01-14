@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder} from '@angular/forms';
 import { Validators } from '@angular/forms';
-import { Product, ProductsService } from '../shared/products.service';
+import { ProductsService } from '../shared/products.service';
 
 @Component({
   selector: 'app-add-product',
@@ -27,7 +27,7 @@ export class AddProductComponent implements OnInit {
 
   onSubmit() {
     // TODO: Use EventEmitter with form value
-    this.productService.addProduct(this.productForm.value)
+    this.productService.addProduct(this.productForm.value);
   }
 
 }
