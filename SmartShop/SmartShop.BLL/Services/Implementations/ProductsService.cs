@@ -20,6 +20,11 @@ namespace SmartShop.BLL.Services.Implementations
             await _unitOfWork.ProductRepository.Add(product);
         }
 
+        public async Task DeleteProduct(int productId)
+        {
+            await _unitOfWork.ProductRepository.Delete(x => x.Id == productId);
+        }
+
         public async Task<IEnumerable<Product>> GetAllProducts()
         {
             //return await _unitOfWork.ProductRepository.GetAll();

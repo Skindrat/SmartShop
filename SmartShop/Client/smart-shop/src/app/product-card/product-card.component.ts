@@ -1,4 +1,4 @@
-import { Product } from './../../shared/products.service';
+import { Product } from './../shared/products.service';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({

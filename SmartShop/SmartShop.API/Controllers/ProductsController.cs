@@ -20,18 +20,25 @@ namespace SmartShop.API.Controllers
             _mapper = mapper;
         }
 
-        [Route("api/products")]
+        [Route("api/Products")]
         [HttpGet]
         public async Task<IEnumerable<ProductDto>> GetProducts()
         {
-            return _mapper.Map< IEnumerable <ProductDto>>( await _productsService.GetAllProducts());
+            return _mapper.Map<IEnumerable <ProductDto>>( await _productsService.GetAllProducts());
         }
 
-        [Route("api/products")]
+        [Route("api/AddProduct")]
         [HttpPost]
-        public async Task PostProducts(Product product)
+        public async Task PostProducts(ProductDto product)
         {
-            await _productsService.AddProducts(product);
+            await _productsService.AddProducts(_mapper.Map<Product>(product));
+        }
+
+        [Route("api/DeleteProduct")]
+        [HttpPost]
+        public async Task PostProducts(int productId)
+        {
+            await _productsService.DeleteProduct(productId);
         }
     }
 }
