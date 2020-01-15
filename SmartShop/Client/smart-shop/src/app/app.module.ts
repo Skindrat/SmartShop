@@ -1,3 +1,6 @@
+import { environment } from './../environments/environment.prod';
+import { UserService } from './shared/user.service';
+import { Logger } from './shared/logger.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -11,6 +14,8 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { SearchProductsComponent } from './search-products/search-products.component';
+
+const API_BASE_URL = environment.apiUrl;
 
 @NgModule({
   declarations: [
@@ -28,7 +33,7 @@ import { SearchProductsComponent } from './search-products/search-products.compo
     AppRoutingModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [Logger, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

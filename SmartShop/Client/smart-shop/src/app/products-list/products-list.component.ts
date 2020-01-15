@@ -1,7 +1,6 @@
 import {
 
   ProductsService,
-  products
 } from './../shared/products.service';
 import {
   Component,

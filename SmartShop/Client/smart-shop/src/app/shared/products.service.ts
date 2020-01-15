@@ -3,7 +3,7 @@ import { Product } from '../models/Product';
 
 
 // tmp
-export const products: Product[] = [{
+export const phones: Product[] = [{
     name: 'iPhone Xr',
     price: 600,
     description: 'The Apple iPhone XR is a smartphone that was tested with the iOS 12.0.1 operating system.' +
@@ -45,7 +45,7 @@ export class ProductsService {
 
   private products: Product[];
   constructor() {
-    this.products = products;
+    this.products = phones;
   }
 
   getProducts(): Product[] {
