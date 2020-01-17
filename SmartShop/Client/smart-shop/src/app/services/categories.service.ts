@@ -1,5 +1,5 @@
 import { phones } from './products.service';
-import { Category } from './../models/Category';
+import { Category } from '../models/Category';
 import { Injectable } from '@angular/core';
 
 // tmp for test

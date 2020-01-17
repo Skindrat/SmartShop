@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { User } from '../models/user';
-import { BucketService } from './bucket.service';
 import { Product } from '../models/Product';
+import { BucketService } from './bucket.service';
 
 @Injectable({
     providedIn: 'root'

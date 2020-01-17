@@ -1,15 +1,16 @@
+import { AlertService } from './../services/alert.service';
 import {
 
   ProductsService,
-} from './../shared/products.service';
+} from '../services/products.service';
 import {
   Component,
   OnInit
 } from '@angular/core';
 import { Product } from '../models/Product';
-import { UserService } from '../shared/user.service';
-import { BucketService } from '../shared/bucket.service';
-import { Logger } from '../shared/logger.service';
+import { UserService } from '../services/user.service';
+import { Logger } from '../services/logger.service';
+import { BucketService } from '../services/bucket.service';
 
 @Component({
   selector: 'app-products-list',
@@ -19,7 +20,8 @@ import { Logger } from '../shared/logger.service';
 export class ProductsListComponent implements OnInit {
 
   products: Product[];
-  constructor( private logger: Logger, private productsService: ProductsService, private bucketService: BucketService) {}
+  constructor( private logger: Logger, private productsService: ProductsService, private bucketService: BucketService,
+               private alertService: AlertService) {}
 
   ngOnInit() {
     this.products = this.productsService.getProducts();
@@ -29,6 +31,7 @@ export class ProductsListComponent implements OnInit {
     this.logger.log('product was added to the bucket');
 
     this.bucketService.addItem(productToBuy, 1);
+    this.alertService.alert('Product was added to the bucket!');
   }
 
 }
