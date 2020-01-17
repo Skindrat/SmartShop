@@ -14,6 +14,8 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { SearchProductsComponent } from './search-products/search-products.component';
+import { ProductsService } from './shared/products.service';
+import { AlertComponent } from './alert/alert.component';
 
 const API_BASE_URL = environment.apiUrl;
 
@@ -26,14 +28,15 @@ const API_BASE_URL = environment.apiUrl;
     NavigationComponent,
     ProductCardComponent,
     ProductDetailsComponent,
-    SearchProductsComponent
+    SearchProductsComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule
   ],
-  providers: [Logger, UserService],
+  providers: [Logger, UserService, ProductsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import { Product } from '../models/Product';
+import { Logger } from './logger.service';
 
 
 // tmp
@@ -44,7 +45,7 @@ export const phones: Product[] = [{
 export class ProductsService {
 
   private products: Product[];
-  constructor() {
+  constructor(private logger: Logger) {
     this.products = phones;
   }
 
@@ -53,6 +54,7 @@ export class ProductsService {
   }
 
   addProduct(newProduct: Product) {
+    this.logger.log('new product was added');
     this.products.push(newProduct);
   }
 

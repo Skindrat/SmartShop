@@ -1,4 +1,4 @@
 <app-search-products></app-search-products>
 <div *ngFor="let product of products" class="card-columns">
-  <app-product-card [product]='product'></app-product-card>
+  <app-product-card [product]='product' (obAddToBucket)='obAddToBucket($event)'></app-product-card>
 </div>

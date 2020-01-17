@@ -28,6 +28,7 @@ export class AddProductComponent implements OnInit {
   onSubmit() {
     // TODO: Use EventEmitter with form value
     this.productService.addProduct(this.productForm.value);
+    this.productForm.reset();
   }
 
 }

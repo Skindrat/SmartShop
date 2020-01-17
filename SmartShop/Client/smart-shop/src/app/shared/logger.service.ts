@@ -10,4 +10,5 @@ export class Logger {
     this.logs.push(message);
     console.log(message);
   }
+
 }
