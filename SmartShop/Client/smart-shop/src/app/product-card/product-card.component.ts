@@ -1,5 +1,7 @@
-import { Product } from './../shared/products.service';
-import { Component, OnInit, Input } from '@angular/core';
+
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Product } from '../models/Product';
+
 
 @Component({
   selector: 'app-product-card',
@@ -9,10 +11,15 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ProductCardComponent implements OnInit {
 
   @Input() product: Product;
+  @Output() obAddToBucket = new EventEmitter<Product>();
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  public addToBucket(){
+    this.obAddToBucket.emit(this.product);
   }
 
 }

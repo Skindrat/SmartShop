@@ -1,10 +1,10 @@
-import {
-  Injectable
-} from '@angular/core';
+import {Injectable} from '@angular/core';
 import { Product } from '../models/Product';
+import { Logger } from './logger.service';
+
 
 // tmp
-export const products: Product[] = [{
+export const phones: Product[] = [{
     name: 'iPhone Xr',
     price: 600,
     description: 'The Apple iPhone XR is a smartphone that was tested with the iOS 12.0.1 operating system.' +
@@ -45,8 +45,8 @@ export const products: Product[] = [{
 export class ProductsService {
 
   private products: Product[];
-  constructor() {
-    this.products = products;
+  constructor(private logger: Logger) {
+    this.products = phones;
   }
 
   getProducts(): Product[] {
@@ -54,6 +54,7 @@ export class ProductsService {
   }
 
   addProduct(newProduct: Product) {
+    this.logger.log('new product was added');
     this.products.push(newProduct);
   }
 
