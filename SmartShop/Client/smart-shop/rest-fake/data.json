@@ -1,0 +1,43 @@
+{
+  "products": [{
+      "name": "iPhone Xr",
+      "price": 600,
+      "description": "The Apple iPhone XR is a smartphone that was tested with the iOS 12.0.1 operating system. This model weighs 6.9 ounces, has a 6.1 inch touch screen display, 12-megapixel main camera, and 7-megapixel selfie camera. It comes with 3GB of RAM. It was tested with 64GB of storage.",
+      "imageUrl": "https://res.cloudinary.com/dxddiink8/image/upload/v1578948102/iphone-xr_v8koqw.jpg",
+      "quantity": 200,
+      "isCounted": true,
+      "isFeatured": false
+    },
+    {
+      "name": "iPhone 8 Plus",
+      "price": 500,
+      "description": "The Apple iPhone 8 Plus is a smartphone that was tested with the iOS 11 operating system. This model weighs 7.2 ounces, has a 5.5 inch touch screen display, 12-megapixel main camera, and 7-megapixel selfie camera. It comes with 3GB of RAM. It was tested with 64GB of storage.",
+      "imageUrl": "https://res.cloudinary.com/dxddiink8/image/upload/v1578948183/iphone-8-plus_lqd1ic.png",
+      "quantity": 200,
+      "isCounted": true,
+      "isFeatured": false
+    },
+    {
+      "name": "iPhone Xs",
+      "price": 700,
+      "description": "The Apple iPhone Xs is a smartphone that was tested with the iOS 13.0 operating system. This model weighs 6.8 ounces, has a 6.1 inch touch screen display, 12-megapixel main camera, and 12-megapixel selfie camera. It comes with 4GB of RAM. It was tested with 64GB of storage.",
+      "imageUrl": "https://res.cloudinary.com/dxddiink8/image/upload/v1578947566/Apple-iPhone-11-Pro-Midnight-Green-frontimage_pflkvx.jpg",
+      "quantity": 200,
+      "isCounted": true,
+      "isFeatured": false
+    }
+  ],
+  "categories": [{
+      "name": "Smartphones",
+      "description": "Smartphones and communicators are different from regular mobile phones by having a sufficiently advanced operating system open to third-party software development (conventional mobile phones operating system is closed to third-party developers). Installing additional applications can significantly improve the functionality of smartphones and smartphones compared to regular mobile phones."
+    },
+    {
+      "name": "Accessories",
+      "description": "Smartphones and communicators are different from regular mobile phones by having a sufficiently advanced operating system open to third-party software development (conventional mobile phones operating system is closed to third-party developers). Installing additional applications can significantly improve the functionality of smartphones and smartphones compared to regular mobile phones."
+    },
+    {
+      "name": "Laptop",
+      "description": "A laptop (also laptop computer), often called a notebook, is a small, portable personal computer (PC) with a clamshell form factor, typically having a thin LCD or LED computer screen mounted on the inside of the upper lid of the clamshell and an alphanumeric keyboard on the inside of the lower lid. The clamshell is opened up to use the computer. Laptops are folded shut for transportation, and thus are suitable for mobile use.[1] Its name comes from lap, as it was deemed to be placed on a person`s lap when being used. Although originally there was a distinction between laptops and notebooks(the former being bigger and heavier than the latter), as of 2014, there is often no longer any difference. Today, laptops are commonly used in a variety of settings, such as at work, in education, for playing games, Internet surfing, for personal multimedia, and general home computer use."
+    }
+  ]
+}
