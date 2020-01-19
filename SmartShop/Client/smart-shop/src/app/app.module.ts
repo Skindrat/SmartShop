@@ -1,6 +1,4 @@
-import { environment } from './../environments/environment.prod';
-import { UserService } from './services/user.service';
-import { Logger } from './services/logger.service';
+import { environment } from './../environments/environment';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -14,7 +12,6 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { SearchProductsComponent } from './search-products/search-products.component';
-import { ProductsService } from './services/products.service';
 import { AlertComponent } from './alert/alert.component';
 import { LoginComponent } from './login/login.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -22,6 +19,9 @@ import { JwtInterceptor } from './helpers/jwt.interceptor';
 import { ErrorInterceptor } from './helpers/error.interceptor';
 import { fakeBackendProvider } from './helpers/fake-backend';
 
+export function getBaseUrl() {
+  return environment.apiUrl;
+}
 
 @NgModule({
   declarations: [
@@ -45,10 +45,12 @@ import { fakeBackendProvider } from './helpers/fake-backend';
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    { provide: 'BASE_URL', useFactory: getBaseUrl },
 
     // provider used to create fake backend
     fakeBackendProvider
   ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
