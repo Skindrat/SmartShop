@@ -35,12 +35,12 @@ export class AlertComponent implements OnInit, OnDestroy {
   }
 
   private async showAlert(newAlert: Alert) {
-
+    const id = newAlert.id;
     this.alerts.push(newAlert);
 
     await this.delay(3000);
 
-    // todo add alert removing
+    this.alerts = this.alerts.filter(x => x.id !== id);
   }
 
 }

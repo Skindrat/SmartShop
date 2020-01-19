@@ -7,7 +7,7 @@ import { Alert } from '../models/alerts/alert';
     providedIn: 'root'
 })
 export class AlertService {
-    private counter: number;
+    private counter: number = 0;
 
     public alert$: Subject<Alert> = new Subject();
 

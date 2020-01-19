@@ -3,8 +3,9 @@
     <a class="navbar-brand">Smart-Shop</a>
     <ul class="nav navbar-nav" routerLinkActive="active">
       <li class="nav-item"><a class="nav-link" routerLink="products-list">Products</a></li>
-      <li class="nav-item"><a class="nav-link" routerLink="add-product">Add Product</a></li>
+      <li class="nav-item"><a class="nav-link" routerLink="add-product" *ngIf='userRole == "Admin"'>Add Product</a></li>
       <li class="nav-item"><a class="nav-link" routerLink="about">About</a></li>
+      <li class="nav-item"><a class="nav-link" (click)="logout()">Logout</a></li>
     </ul>
   </div>
 </nav>
