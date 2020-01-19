@@ -1,20 +1,18 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { User } from '../models/user';
-import { Product } from '../models/Product';
-import { BucketService } from './bucket.service';
+import { environment } from 'src/environments/environment.prod';
 
-@Injectable({
-    providedIn: 'root'
-  })
-  export class UserService {
 
-    private currentUser: User;
+@Injectable({ providedIn: 'root' })
+export class UserService {
+    constructor(private http: HttpClient) { }
 
-    constructor(private bucket: BucketService) {
-
+    getAll() {
+        return this.http.get<User[]>(`${environment.apiUrl}/users`);
     }
 
-    isUserAuthorized(): boolean{
-      return true;
+    getById(id: number) {
+        return this.http.get<User>(`${environment.apiUrl}/users/${id}`);
     }
-  }
+}

@@ -16,8 +16,12 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { SearchProductsComponent } from './search-products/search-products.component';
 import { ProductsService } from './services/products.service';
 import { AlertComponent } from './alert/alert.component';
+import { LoginComponent } from './login/login.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { JwtInterceptor } from './helpers/jwt.interceptor';
+import { ErrorInterceptor } from './helpers/error.interceptor';
+import { fakeBackendProvider } from './helpers/fake-backend';
 
-const API_BASE_URL = environment.apiUrl;
 
 @NgModule({
   declarations: [
@@ -29,14 +33,22 @@ const API_BASE_URL = environment.apiUrl;
     ProductCardComponent,
     ProductDetailsComponent,
     SearchProductsComponent,
-    AlertComponent
+    AlertComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
-  providers: [Logger, UserService, ProductsService],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+
+    // provider used to create fake backend
+    fakeBackendProvider
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

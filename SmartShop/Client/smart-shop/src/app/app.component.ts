@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { User } from './models/user';
+import { Router } from '@angular/router';
+import { AuthenticationService } from './services/authentication.service';
+import { Role } from './models/Role';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +11,21 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'smart-shop';
+  currentUser: User;
+
+  constructor(
+    private router: Router,
+    private authenticationService: AuthenticationService) {
+    this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
+  }
+
+get userRole() {
+    return this.currentUser.role;
+  }
+
+onLogout() {
+    this.authenticationService.logout();
+    this.router.navigate(['/login']);
+  }
+
 }

@@ -11,6 +11,7 @@ import { Product } from '../models/Product';
 import { UserService } from '../services/user.service';
 import { Logger } from '../services/logger.service';
 import { BucketService } from '../services/bucket.service';
+import { AlertStatus } from '../models/alerts/alert-status';
 
 @Component({
   selector: 'app-products-list',
@@ -31,7 +32,7 @@ export class ProductsListComponent implements OnInit {
     this.logger.log('product was added to the bucket');
 
     this.bucketService.addItem(productToBuy, 1);
-    this.alertService.alert('Product was added to the bucket!');
+    this.alertService.alert('Product was added to the bucket!', AlertStatus.success);
   }
 
 }

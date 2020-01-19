@@ -1,5 +1,5 @@
 <div class="container">
-  <app-navigation></app-navigation>
+  <app-navigation (onLogout)='onLogout()' *ngIf="currentUser" [userRole]='userRole'></app-navigation>
   <app-alert></app-alert>
   <router-outlet></router-outlet>
 </div>

@@ -1,6 +1,10 @@
-export interface User{
+
+export class User {
+    id: number;
+    username: string;
+    password: string;
     firstName: string;
     lastName: string;
-    mail: string;
-    isAuthorized: boolean;
+    role: string;
+    token?: string;
 }
