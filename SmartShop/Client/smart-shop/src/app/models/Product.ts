@@ -1,9 +1,13 @@
-export interface Product {
-  name: string;
-  description: string;
-  imageUrl: string;
-  price: number;
-  quantity: number;
-  isCounted: boolean;
-  isFeatured: boolean;
+export class Product {
+
+  constructor(
+    public name: string,
+    public description: string,
+    public imageUrl: string,
+    public price: number,
+    public quantity: number,
+    public isCounted: boolean,
+    public isFeatured: boolean,
+  ) { }
+
 }

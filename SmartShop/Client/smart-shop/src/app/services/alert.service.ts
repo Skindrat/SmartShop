@@ -1,4 +1,4 @@
-import { AlertStatus } from './../models/alerts/alert-status';
+import { AlertStatus } from '../models/alerts/alert-status.enum';
 import { Observable, Subject } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { Alert } from '../models/alerts/alert';
