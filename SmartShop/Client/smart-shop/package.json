@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "json": "json-server rest-fake/data.json --port 50307"
+    "json": "json-server rest-fake/data.json -p 50307 -m rest-fake/authMiddleware.js"
   },
   "private": true,
   "dependencies": {

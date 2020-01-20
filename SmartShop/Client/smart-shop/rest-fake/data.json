@@ -1,5 +1,26 @@
 {
-  "products": [{
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "email": "admin@mail.com",
+      "password": "admin",
+      "firstName": "Admin",
+      "lastName": "User",
+      "role": "admin"
+    },
+    {
+      "id": 2,
+      "username": "user",
+      "email": "user@mail.com",
+      "password": "user",
+      "firstName": "Normal",
+      "lastName": "User",
+      "role": "user"
+    }
+  ],
+  "products": [
+    {
       "name": "iPhone Xr",
       "price": 600,
       "description": "The Apple iPhone XR is a smartphone that was tested with the iOS 12.0.1 operating system. This model weighs 6.9 ounces, has a 6.1 inch touch screen display, 12-megapixel main camera, and 7-megapixel selfie camera. It comes with 3GB of RAM. It was tested with 64GB of storage.",

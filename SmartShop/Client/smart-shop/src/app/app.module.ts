@@ -17,7 +17,6 @@ import { LoginComponent } from './login/login.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtInterceptor } from './helpers/jwt.interceptor';
 import { ErrorInterceptor } from './helpers/error.interceptor';
-import { fakeBackendProvider } from './helpers/fake-backend';
 
 export function getBaseUrl() {
   return environment.apiUrl;
@@ -45,10 +44,7 @@ export function getBaseUrl() {
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
-    { provide: 'BASE_URL', useFactory: getBaseUrl },
-
-    // provider used to create fake backend
-    fakeBackendProvider
+    { provide: 'BASE_URL', useFactory: getBaseUrl }
   ],
   bootstrap: [AppComponent]
 })
