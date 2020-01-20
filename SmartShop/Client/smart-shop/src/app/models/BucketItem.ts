@@ -1,6 +1,10 @@
 import { Product } from './product';
 
-export interface BucketItem {
-  product: Product;
-  quantity: number;
+export class BucketItem {
+
+  constructor(
+    public product: Product,
+    public quantity: number
+  ) { }
+
 }

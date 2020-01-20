@@ -1,7 +1,10 @@
-import { AlertStatus } from './alert-status';
+import { AlertStatus } from './alert-status.enum';
 
-export interface Alert {
-  id: number;
-  message: string;
-  alertStatus: AlertStatus;
+export class Alert {
+
+  constructor(
+    public id: number,
+    public message: string,
+    public alertStatus: AlertStatus) { }
+
 }
