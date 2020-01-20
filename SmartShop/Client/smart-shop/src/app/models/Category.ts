@@ -1,6 +1,6 @@
-import { Product } from './Product';
+import { Product } from './product';
 
 export interface Category {
-    name: string;
-    description: string;
-  }
+  name: string;
+  description: string;
+}

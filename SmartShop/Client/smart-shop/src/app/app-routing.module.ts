@@ -9,36 +9,36 @@ import { Role } from './models/Role';
 
 
 export const routerConfig: Routes = [
-    {
-        path: '',
-        redirectTo: '/products-list',
-        pathMatch: 'full',
-        canActivate: [AuthGuard]
-    },
   {
-      path: 'products-list',
-      component: ProductsListComponent,
-      canActivate: [AuthGuard]
+    path: '',
+    redirectTo: '/products-list',
+    pathMatch: 'full',
+    canActivate: [AuthGuard]
   },
   {
-      path: 'add-product',
-      component: AddProductComponent,
-      canActivate: [AuthGuard], 
-      data: { roles: [Role.Admin] }
+    path: 'products-list',
+    component: ProductsListComponent,
+    canActivate: [AuthGuard]
   },
   {
-      path: 'about',
-      component: AboutComponent,
-      canActivate: [AuthGuard]
+    path: 'add-product',
+    component: AddProductComponent,
+    canActivate: [AuthGuard],
+    data: { roles: [Role.Admin] }
   },
-  { 
-    path: 'login', 
-    component: LoginComponent 
-    },
   {
-      path: '**',
-      redirectTo: '/products-list',
-      pathMatch: 'full'
+    path: 'about',
+    component: AboutComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: '**',
+    redirectTo: '/products-list',
+    pathMatch: 'full'
   }
 ];
 

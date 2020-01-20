@@ -1,25 +1,19 @@
-
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Product } from '../models/Product';
-
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Product } from '../models/product';
 
 @Component({
   selector: 'app-product-card',
   templateUrl: './product-card.component.html',
   styleUrls: ['./product-card.component.css']
 })
-export class ProductCardComponent implements OnInit {
+export class ProductCardComponent {
 
   @Input() product: Product;
-  @Output() obAddToBucket = new EventEmitter<Product>();
+  @Output() addToBucket = new EventEmitter<Product>();
 
   constructor() { }
 
-  ngOnInit() {
+  public onAddToBucket() {
+    this.addToBucket.emit(this.product);
   }
-
-  public addToBucket(){
-    this.obAddToBucket.emit(this.product);
-  }
-
 }

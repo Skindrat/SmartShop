@@ -1,6 +1,6 @@
-import { Product } from './Product';
+import { Product } from './product';
 
-export interface BucketItem{
-    product: Product;
-    quantity: number;
+export interface BucketItem {
+  product: Product;
+  quantity: number;
 }

@@ -1,4 +1,4 @@
-import { Category } from '../models/Category';
+import { Category } from '../models/category';
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';

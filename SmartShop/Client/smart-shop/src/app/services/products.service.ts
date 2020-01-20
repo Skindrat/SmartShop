@@ -1,5 +1,5 @@
 import {Injectable, Inject} from '@angular/core';
-import { Product } from '../models/Product';
+import { Product } from '../models/product';
 import { Logger } from './logger.service';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
