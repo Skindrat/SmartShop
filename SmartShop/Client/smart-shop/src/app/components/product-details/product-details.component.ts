@@ -10,8 +10,8 @@ import {
 })
 export class ProductDetailsComponent implements OnInit {
 
-  constructor() {}
+  constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
 }

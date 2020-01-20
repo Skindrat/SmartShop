@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { User } from './models/user';
 import { Router } from '@angular/router';
 import { AuthenticationService } from './services/authentication.service';
-import { Role } from './models/Role';
 
 @Component({
   selector: 'app-root',
@@ -19,11 +18,11 @@ export class AppComponent {
     this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
   }
 
-get userRole() {
+  get userRole() {
     return this.currentUser.role;
   }
 
-onLogout() {
+  onLogout() {
     this.authenticationService.logout();
     this.router.navigate(['/login']);
   }

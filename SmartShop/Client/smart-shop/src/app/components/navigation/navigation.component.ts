@@ -8,8 +8,9 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 export class NavigationComponent implements OnInit {
 
   @Output() onLogout = new EventEmitter();
+
   @Input() userRole: string;
-  
+
   constructor() { }
 
   ngOnInit() {
