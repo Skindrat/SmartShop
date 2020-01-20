@@ -8,15 +8,15 @@ import { AppComponent } from './app.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtInterceptor } from './helpers/jwt.interceptor';
 import { ErrorInterceptor } from './helpers/error.interceptor';
-import { ProductsListComponent } from './components/products-list/products-list.component';
-import { AddProductComponent } from './components/add-product/add-product.component';
-import { AboutComponent } from './components/about/about.component';
-import { NavigationComponent } from './components/navigation/navigation.component';
-import { ProductCardComponent } from './components/product-card/product-card.component';
-import { ProductDetailsComponent } from './components/product-details/product-details.component';
-import { SearchProductsComponent } from './components/search-products/search-products.component';
-import { AlertComponent } from './components/alert/alert.component';
-import { LoginComponent } from './components/login/login.component';
+import { ProductsListComponent } from './components/store/products-list/products-list.component';
+import { AddProductComponent } from './components/admin/add-product/add-product.component';
+import { AboutComponent } from './components/store/about/about.component';
+import { NavigationComponent } from './components/shared/navigation/navigation.component';
+import { ProductCardComponent } from './components/store/product-card/product-card.component';
+import { ProductDetailsComponent } from './components/store/product-details/product-details.component';
+import { SearchProductsComponent } from './components/shared/search-products/search-products.component';
+import { AlertComponent } from './components/shared/alert/alert.component';
+import { LoginComponent } from './components/shared/login/login.component';
 
 export function getBaseUrl() {
   return environment.apiUrl;

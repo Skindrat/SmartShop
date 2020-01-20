@@ -1,10 +1,10 @@
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from './guard/auth.guard';
-import { ProductsListComponent } from './components/products-list/products-list.component';
-import { AddProductComponent } from './components/add-product/add-product.component';
+import { ProductsListComponent } from './components/store/products-list/products-list.component';
+import { AddProductComponent } from './components/admin/add-product/add-product.component';
 import { Role } from './models/role';
-import { AboutComponent } from './components/about/about.component';
-import { LoginComponent } from './components/login/login.component';
+import { AboutComponent } from './components/store/about/about.component';
+import { LoginComponent } from './components/shared/login/login.component';
 import { NgModule } from '@angular/core';
 
 export const routerConfig: Routes = [

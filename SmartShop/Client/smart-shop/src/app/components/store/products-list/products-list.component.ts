@@ -1,10 +1,10 @@
-import { AlertService } from '../../services/alert.service';
-import { ProductsService } from '../../services/products.service';
+import { AlertService } from '../../../services/alert.service';
+import { ProductsService } from '../../../services/products.service';
 import { Component, OnInit } from '@angular/core';
-import { Product } from '../../models/product';
-import { Logger } from '../../services/logger.service';
-import { BucketService } from '../../services/bucket.service';
-import { AlertStatus } from '../../models/alerts/alert-status';
+import { Product } from '../../../models/product';
+import { Logger } from '../../../services/logger.service';
+import { BucketService } from '../../../services/bucket.service';
+import { AlertStatus } from '../../../models/alerts/alert-status';
 
 @Component({
   selector: 'app-products-list',

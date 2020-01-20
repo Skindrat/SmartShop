@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Alert } from '../../models/alerts/alert';
-import { AlertService } from '../../services/alert.service';
+import { Alert } from '../../../models/alerts/alert';
+import { AlertService } from '../../../services/alert.service';
 
 
 @Component({
