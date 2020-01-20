@@ -25,7 +25,7 @@ export class ProductsListComponent implements OnInit {
                private alertService: AlertService) {}
 
   ngOnInit() {
-    this.products = this.productsService.getProducts();
+    this.productsService.getProducts().subscribe(x => this.products = x);
   }
 
   obAddToBucket(productToBuy: Product){
