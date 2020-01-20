@@ -5,18 +5,18 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ProductsListComponent } from './products-list/products-list.component';
-import { AddProductComponent } from './add-product/add-product.component';
-import { AboutComponent } from './about/about.component';
-import { NavigationComponent } from './navigation/navigation.component';
-import { ProductCardComponent } from './product-card/product-card.component';
-import { ProductDetailsComponent } from './product-details/product-details.component';
-import { SearchProductsComponent } from './search-products/search-products.component';
-import { AlertComponent } from './alert/alert.component';
-import { LoginComponent } from './login/login.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtInterceptor } from './helpers/jwt.interceptor';
 import { ErrorInterceptor } from './helpers/error.interceptor';
+import { ProductsListComponent } from './components/products-list/products-list.component';
+import { AddProductComponent } from './components/add-product/add-product.component';
+import { AboutComponent } from './components/about/about.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
+import { ProductCardComponent } from './components/product-card/product-card.component';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { SearchProductsComponent } from './components/search-products/search-products.component';
+import { AlertComponent } from './components/alert/alert.component';
+import { LoginComponent } from './components/login/login.component';
 
 export function getBaseUrl() {
   return environment.apiUrl;

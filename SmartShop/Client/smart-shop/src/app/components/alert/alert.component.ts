@@ -1,7 +1,7 @@
-import { AlertStatus } from '../models/alerts/alert-status';
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { AlertService } from '../services/alert.service';
-import { Alert } from '../models/alerts/alert';
+import { Alert } from '../../models/alerts/alert';
+import { AlertService } from '../../services/alert.service';
+
 
 @Component({
   selector: 'app-alert',

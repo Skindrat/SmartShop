@@ -1,12 +1,11 @@
-import { AboutComponent } from './about/about.component';
-import { AddProductComponent } from './add-product/add-product.component';
-import { ProductsListComponent } from './products-list/products-list.component';
-import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './guard/auth.guard';
-import { Role } from './models/Role';
-
+import { ProductsListComponent } from './components/products-list/products-list.component';
+import { AddProductComponent } from './components/add-product/add-product.component';
+import { Role } from './models/role';
+import { AboutComponent } from './components/about/about.component';
+import { LoginComponent } from './components/login/login.component';
+import { NgModule } from '@angular/core';
 
 export const routerConfig: Routes = [
   {
