@@ -1,8 +1,16 @@
 .product-image{
-    width: 30rem;
+    width: 20rem;
 }
 
-.bordered{
-    margin: 1rem;
-    width: 40rem;
+.card-body{
+  color: black;
 }
+
+button{
+  margin: 5px;
+}
+
+.card{
+  margin: 5px;
+}
+

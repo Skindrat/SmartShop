@@ -5,6 +5,8 @@ import { Product } from '../../../models/product';
 import { Logger } from '../../../services/logger.service';
 import { BucketService } from '../../../services/bucket.service';
 import { AlertStatus } from '../../../models/alerts/alert-status.enum';
+import { CategoriesService } from 'src/app/services/categories.service';
+import { Category } from 'src/app/models/category';
 
 @Component({
   selector: 'app-products-list',
@@ -13,12 +15,15 @@ import { AlertStatus } from '../../../models/alerts/alert-status.enum';
 })
 export class ProductsListComponent implements OnInit {
 
-  products: Product[];
-  constructor(private logger: Logger, private productsService: ProductsService, private bucketService: BucketService,
-              private alertService: AlertService) { }
+  products: Product[] = [];
+  categories: Category[] = [];
+
+  constructor(private logger: Logger, private productsService: ProductsService, private categoryService: CategoriesService,
+              private bucketService: BucketService, private alertService: AlertService) { }
 
   ngOnInit() {
     this.productsService.getProducts().subscribe(x => this.products = x);
+    this.categoryService.getCategory().subscribe(x => this.categories = x);
   }
 
   onAddToBucket(productToBuy: Product) {
