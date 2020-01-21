@@ -1,13 +1,14 @@
-
-<div class="container">
-  <div class="col-md-2 p-2">
-    <div *ngFor="let category of categories">
-      <button type="button" class="btn btn-primary btn-block">{{ category.name }}</button >
+<div class="container-fluid bg-light">
+  <div class="row text-white">
+    <div class="col-2 p-2">
+      <div *ngFor="let category of categories">
+        <button type="button" class="btn btn-outline-dark btn-block">{{ category.name | uppercase }}</button>
+      </div>
     </div>
-  </div>
-  <div class="col-md-10 p-2">
-    <div *ngFor="let product of products">
-      <app-product-card [product]='product' (addToBucket)='onAddToBucket($event)'></app-product-card>
+    <div class="col-10 p-2">
+      <div *ngFor="let product of products">
+        <app-product-card [product]='product' (addToBucket)='onAddToBucket($event)'></app-product-card>
+      </div>
     </div>
   </div>
 </div>
