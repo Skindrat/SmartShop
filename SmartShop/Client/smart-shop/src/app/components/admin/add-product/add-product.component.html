@@ -1,51 +1,52 @@
-<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+<div class="container">
+  <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
 
-  <div class="form-group">
-    <label>Name</label>
-    <input type="text" formControlName="name" class="form-control">
+    <div class="form-group">
+      <label>Name</label>
+      <input type="text" formControlName="name" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label>Description</label>
+      <textarea type="text" formControlName="description" class="form-control product-description"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>ImageUrl</label>
+      <input type="text" formControlName="imageUrl" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label>Price</label>
+      <input type="number" formControlName="price" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label>Quantity</label>
+      <input type="number" formControlName="quantity" class="form-control">
+    </div>
+
+    <div class="form-check">
+      <input type="checkbox" formControlName="isCounted" class="form-check-input">
+      <label class="form-check-label">Is countable</label>
+    </div>
+
+    <div class="form-check">
+      <input type="checkbox" formControlName="isFeatured" class="form-check-input">
+      <label class="form-check-label">Is featured</label>
+    </div>
+
+    <button type="submit" [disabled]="!productForm.valid" routerLink="products-list"
+      class="btn btn-primary mb-2">Submit</button>
+
+  </form>
+
+  <div class="debug">
+    <p>
+      Form Value: {{ productForm.value | json }}
+    </p>
+    <p>
+      Form Status: {{ productForm.status }}
+    </p>
   </div>
-
-  <div class="form-group">
-    <label>Description</label>
-    <textarea type="text" formControlName="description" class="form-control"></textarea>
-  </div>
-
-  <div class="form-group">
-    <label>ImageUrl</label>
-    <input type="text" formControlName="imageUrl" class="form-control">
-  </div>
-
-  <div class="form-group">
-    <label>Price</label>
-    <input type="number" formControlName="price" class="form-control">
-  </div>
-
-  <div class="form-group">
-    <label>Quantity</label>
-    <input type="number" formControlName="quantity" class="form-control">
-  </div>
-
-  <div class="form-check">
-    <input type="checkbox" formControlName="isCounted" class="form-check-input">
-    <label class="form-check-label">Is countable</label>
-  </div>
-
-  <div class="form-check">
-    <input type="checkbox" formControlName="isFeatured" class="form-check-input">
-    <label class="form-check-label">Is featured</label>
-  </div>
-
-  <button type="submit" [disabled]="!productForm.valid" routerLink="products-list"
-    class="btn btn-primary mb-2">Submit</button>
-
-</form>
-
-
-<div class="debug">
-  <p>
-    Form Value: {{ productForm.value | json }}
-  </p>
-  <p>
-    Form Status: {{ productForm.status }}
-  </p>
 </div>

@@ -1,6 +1,8 @@
 <nav class="navbar navbar-dark bg-inverse">
-  <div class="container">
-    <a class="navbar-brand">Smart-Shop</a>
+  <div class="container bg-dark text-white">
+    <div class="col">
+      <a class="navbar-brand">SMART STORE</a>
+    </div>
     <ul class="nav navbar-nav" routerLinkActive="active">
       <li class="nav-item"><a class="nav-link" routerLink="products-list">Products</a></li>
       <li class="nav-item"><a class="nav-link" routerLink="add-product" *ngIf='userRole === "admin"'>Add Product</a>
