@@ -5,8 +5,8 @@
         <button type="button" class="btn btn-outline-dark btn-block">{{ category.name | uppercase }}</button>
       </div>
     </div>
-    <div class="col-10 p-2">
-      <div *ngFor="let product of products">
+    <div class="row col-10 p-2">
+      <div class="col-lg-6 col-xl-4" *ngFor="let product of products">
         <app-product-card [product]='product' (addToBucket)='onAddToBucket($event)'></app-product-card>
       </div>
     </div>

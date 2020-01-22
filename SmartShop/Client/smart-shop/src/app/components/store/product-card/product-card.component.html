@@ -1,13 +1,19 @@
-<div class="card" style="width: 30rem;">
-  <img class="card-img-top product-image" [src]="product.imageUrl" alt="Card image cap">
-  <div class="card-body">
-    <h3 class="card-title">{{ product.name }}</h3>
-    <h4 class="card-title">{{ product.price | currency:"USD":"symbol":"2.2-2" }} </h4>
-    <p class="card-text">{{ product.description }}</p>
-  </div>
-
-  <div class="card-body">
-    <button type="button" class="btn btn-outline-primary" (click)='onAddToBucket()'>ADD TO BUCKET</button>
-    <button type="button" class="btn btn-outline-primary">SEE DETAILS</button>
-  </div>
+<div style="color: black;">
+  <figure class="card card-product">
+    <div class="img-wrap"><img [src]="product.imageUrl" alt="image not loaded!"></div>
+    <figcaption class="info-wrap">
+      <h4 class="title">{{ product.name }}</h4>
+      <p class="desc">{{ product.description }}</p>
+      <div class="rating-wrap">
+        <div class="label-rating">132 reviews</div>
+        <div class="label-rating">154 orders</div>
+      </div>
+    </figcaption>
+    <div class="bottom-wrap">
+      <button type="button" class="btn btn-sm btn-outline-dark float-right" (click)="onAddToBucket()">ADD TO BUCKET!</button>
+      <div class="price-wrap h5">
+        <span class="price-new">{{ product.price | currency:"USD":"symbol":"2.2-2" }}</span>
+      </div>
+    </div>
+  </figure>
 </div>
