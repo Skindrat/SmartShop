@@ -17,6 +17,7 @@ import { ProductDetailsComponent } from './components/store/product-details/prod
 import { SearchProductsComponent } from './components/shared/search-products/search-products.component';
 import { AlertComponent } from './components/shared/alert/alert.component';
 import { LoginComponent } from './components/shared/login/login.component';
+import {CounterOfDirective} from './directives/counter-of.directive';
 
 export function getBaseUrl() {
   return environment.apiUrl;
@@ -33,7 +34,8 @@ export function getBaseUrl() {
     ProductDetailsComponent,
     SearchProductsComponent,
     AlertComponent,
-    LoginComponent
+    LoginComponent,
+    CounterOfDirective
   ],
   imports: [
     BrowserModule,
