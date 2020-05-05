@@ -10,7 +10,7 @@ const users = [
 module.exports = function (req, res, next) {
   if ((req.url == "/api/login" || req.url == "/login") &&
     req.method == "POST") {
-    let currentUser = users.find(x => x.userName == req.body.userName && x.password == req.body.password)
+    let currentUser = users.find(x => x.userName == req.body.userName && x.password == req.body.password);
     if (req.body != null && currentUser) {
       let token = jwt.sign({
         userName: currentUser.userName,
@@ -52,4 +52,4 @@ module.exports = function (req, res, next) {
     return;
   }
   next();
-}
+};

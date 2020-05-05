@@ -1,5 +1,5 @@
 import { AlertStatus } from '../models/alerts/alert-status.enum';
-import { Observable, Subject } from 'rxjs';
+import { Subject } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { Alert } from '../models/alerts/alert';
 
@@ -12,7 +12,7 @@ export class AlertService {
     public alert$: Subject<Alert> = new Subject();
 
     public alert(message: string, alertStatus: AlertStatus) {
-        const id = ++this.counter;
-        this.alert$.next({id, message, alertStatus});
+        const index = ++this.counter;
+        this.alert$.next({index, message, alertStatus});
     }
 }

@@ -3,7 +3,7 @@ import { AlertStatus } from './alert-status.enum';
 export class Alert {
 
   constructor(
-    public id: number,
+    public index: number,
     public message: string,
     public alertStatus: AlertStatus) { }
 

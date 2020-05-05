@@ -9,16 +9,22 @@ import { Observable } from 'rxjs';
 })
 export class ProductsService {
 
-  private products: Product[];
-  constructor(@Inject('BASE_URL') private baseUrl: string, private logger: Logger, private httpClient : HttpClient) {
+  constructor(@Inject('BASE_URL') private baseUrl: string, private logger: Logger, private httpClient: HttpClient) {
   }
 
   getProducts(): Observable<Product[]> {
     return this.httpClient.get<Product[]>(this.baseUrl + '/products');
   }
 
+  getProductsCount(): number {
+    return 6;
+  }
+
+  getProductByCategory(categoryId: number, page: number, maxItemsPerPage: number): Observable<Product[]> {
+    return this.httpClient.get<Product[]>(this.baseUrl + `/categories/${ categoryId }/products?_page=${ page }` +
+      `&_limit=${ maxItemsPerPage }`);
+  }
+
   addProduct(newProduct: Product) {
-    this.logger.log('new product was added');
-    this.products.push(newProduct);
   }
 }

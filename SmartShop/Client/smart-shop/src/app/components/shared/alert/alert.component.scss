@@ -1,7 +1,10 @@
+@import "src/app/styles/variables.scss";
+
 .alert-container {
   position: fixed;
   top: 0;
   right: 0;
   margin: 10px;
   display: block;
+  z-index: $alert-z-index;
 }
