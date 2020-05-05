@@ -1,12 +1,13 @@
-import { AlertService } from '../../../services/alert.service';
-import { ProductsService } from '../../../services/products.service';
+import {AlertService} from '../../../services/alert.service';
+import {ProductsService} from '../../../services/products.service';
 import {Component, OnInit} from '@angular/core';
-import { Product } from '../../../models/product';
-import { Logger } from '../../../services/logger.service';
-import { BucketService } from '../../../services/bucket.service';
-import { AlertStatus } from '../../../models/alerts/alert-status.enum';
-import { CategoriesService } from 'src/app/services/categories.service';
-import { Category } from 'src/app/models/category';
+import {Product} from '../../../models/product';
+import {Logger} from '../../../services/logger.service';
+import {BucketService} from '../../../services/bucket.service';
+import {AlertStatus} from '../../../models/alerts/alert-status.enum';
+import {CategoriesService} from 'src/app/services/categories.service';
+import {Category} from 'src/app/models/category';
+import {first} from 'rxjs/operators';
 
 @Component({
   selector: 'app-products-list',
@@ -16,7 +17,6 @@ import { Category } from 'src/app/models/category';
 export class ProductsListComponent implements OnInit {
 
   productsPerPage = 3;
-  pageNumbers = [];
   selectedPage = 1;
   selectedCategoryId = 0;
 
@@ -24,52 +24,53 @@ export class ProductsListComponent implements OnInit {
   categories: Category[] = [];
 
   constructor(private logger: Logger, private productsService: ProductsService, private categoryService: CategoriesService,
-              private bucketService: BucketService, private alertService: AlertService) { }
+              private bucketService: BucketService, private alertService: AlertService) {
+  }
 
   ngOnInit() {
-    this.categoryService.getCategory().subscribe(categories => {
-      this.categories = categories;
-      if (this.categories.length > 0) {
-        this.changeCategory(categories[0].id);
-      } else {
-        this.logger.log('categories.length <= 0');
-      }
-    });
+    this.categoryService.getCategory()
+      .pipe(first())
+      .subscribe(categories => {
+        if (categories || categories.length > 0) {
+          this.categories = categories;
+          this.onChangeCategory(this.categories[0].id);
+          this.logger.log('categories.length <= 0 or wrong');
+        } else {
+          this.logger.log('categories.length <= 0 or wrong');
+        }
+      }, error => this.logger.log(error));
+  }
+
+  get pageNumbers(): number {
+    const productsLength = this.productsService.getProductsCount();
+    return Math.ceil(productsLength / this.productsPerPage);
   }
 
   onAddToBucket(productToBuy: Product) {
-    this.logger.log('product was added to the bucket');
-
     this.bucketService.addItem(productToBuy, 1);
     this.alertService.alert('Product was added to the bucket!', AlertStatus.success);
   }
 
-  changeCategory(id: number) {
-    this.logger.log('category was changed to Id:' + id);
-
+  onChangeCategory(id: number) {
     this.selectedCategoryId = id;
     this.updateProducts();
   }
 
-  private updateProducts() {
-    this.logger.log('update products for categoryId:' + this.selectedCategoryId);
+  onChangeProductsPerPage($event: any) {
+    this.productsPerPage = Number($event.target.value);
+    this.onChangePage(1);
+  }
 
+  onChangePage(pageNumber: number) {
+    this.selectedPage = pageNumber;
+    this.updateProducts();
+  }
+
+  private updateProducts() {
     this.productsService.getProductByCategory(this.selectedCategoryId, this.selectedPage, this.productsPerPage)
+      .pipe(first())
       .subscribe(products => {
         this.products = products;
-        this.pageNumbers = Array(Math.ceil(products.length / this.productsPerPage))
-          .fill(0)
-          .map((x, i) => i + 1);
-      });
-  }
-
-  changePageSize(newSize: any) {
-    this.productsPerPage = Number(newSize);
-    this.changePage(1);
-  }
-
-  changePage(page: number) {
-    this.selectedPage = page;
-    this.updateProducts();
+      }, error => this.logger.log(error));
   }
 }
